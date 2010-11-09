@@ -1,18 +1,29 @@
 # culler
 
+* http://rubygems.org/gems/culler
 * http://github.com/bleything/culler
 
 ## DESCRIPTION:
 
-FIX (describe your package)
+Culler is a tool for finding and removing duplicate files on disk. It
+offers a number of comparison techniques and is pluggable to allow for
+custom comparison.
 
 ## FEATURES:
 
-* FIX (list of features or problems)
+Coming soon.
 
 ## REQUIREMENTS:
 
-* FIX (list of requirements)
+RubyGems (which you should have gotten when you installed):
+
+* isolate
+* mongoid
+* thor
+
+Other stuff:
+
+* MongoDB
 
 ## INSTALL:
 
