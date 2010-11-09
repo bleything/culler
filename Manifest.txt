@@ -1,0 +1,7 @@
+CHANGELOG.md
+Manifest.txt
+README.md
+Rakefile
+bin/culler
+lib/culler.rb
+test/test_culler.rb
