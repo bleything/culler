@@ -18,7 +18,7 @@ Coming soon.
 RubyGems (which you should have gotten when you installed):
 
 * isolate
-* mongoid
+* mongo
 * thor
 
 Other stuff:
