@@ -19,7 +19,6 @@ RubyGems (which you should have gotten when you installed):
 
 * isolate
 * mongo
-* thor
 
 Other stuff:
 
