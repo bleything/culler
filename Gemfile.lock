@@ -17,6 +17,7 @@ GEM
       mongo (~> 1.2)
       tzinfo (~> 0.3.22)
       will_paginate (~> 3.0.pre)
+    progress (1.1.3)
     tzinfo (0.3.26)
     will_paginate (3.0.pre2)
 
@@ -26,3 +27,4 @@ PLATFORMS
 DEPENDENCIES
   bson_ext
   mongoid
+  progress
