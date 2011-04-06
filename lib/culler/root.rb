@@ -8,6 +8,7 @@ class Culler::Root
   field :enabled, :type => Boolean, :default => true
 
   ### associations and validations
+  has_many :files, :class_name => "Culler::File"
   validates_presence_of   :name, :path
   validates_uniqueness_of :name, :path
 
