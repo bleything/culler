@@ -10,7 +10,7 @@ class Culler::File
   validates_presence_of   :path
   validates_uniqueness_of :path
   validates_presence_of   :root_id,
-    :message => "cannot be saved without an associated root."
+    :message => "is required"
 
   ### make the constructor a bit more humane
   def initialize( path, opts = {} )
