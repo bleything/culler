@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'hoe'
 
 Hoe.plugin :isolate
