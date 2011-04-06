@@ -8,6 +8,7 @@ class TestCullerRoot < MiniTest::Unit::TestCase
 
   def teardown
     Culler::Root.delete_all
+    Culler::File.delete_all
   end
 
   def test_initializer_takes_a_name_and_path
@@ -40,5 +41,25 @@ class TestCullerRoot < MiniTest::Unit::TestCase
   def test_invalid_without_unique_path
     Culler::Root.new( @name, @path ).save
     refute Culler::Root.new( 'some other name', @path ).valid?
+  end
+
+  def test_update_inserts_files
+    files = []
+    Find.find( @path ) {|f| files << f }
+    files.delete_if {|f| File.directory? f }
+
+    root = Culler::Root.new( @name, @path )
+    root.update
+
+    assert_equal files.count, Culler::File.count
+  end
+
+  def test_update_only_adds_files
+    root = Culler::Root.new( @name, @path )
+    root.update
+
+    Culler::File.all.each do |f|
+      assert File.file?( f.path )
+    end
   end
 end

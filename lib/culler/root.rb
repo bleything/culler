@@ -1,3 +1,5 @@
+require 'find'
+
 class Culler::Root
   include Mongoid::Document
 
@@ -15,5 +17,14 @@ class Culler::Root
   ### make the constructor a bit more humane
   def initialize( name, path, opts = {} )
     super opts.merge( :name => name, :path => path )
+  end
+
+  ### find files in the root and insert them into the database
+  def update
+    Find.find( self.path ) do |file|
+      next if File.directory?( file )
+      f = Culler::File.new( file, :root => self )
+      f.save!
+    end
   end
 end
