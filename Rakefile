@@ -1,6 +1,6 @@
 require 'hoe'
 
-Hoe.plugin :isolate
+Hoe.plugin :doofus, :git
 
 Hoe.spec 'culler' do
   developer 'Ben Bleything', 'ben@bleything.net'
