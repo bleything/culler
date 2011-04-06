@@ -2,9 +2,12 @@ require 'test/helper'
 
 class TestCullerRoot < MiniTest::Unit::TestCase
   def setup
-    Culler::Root.delete_all
     @name = 'my root'
-    @path = '/tmp'
+    @path = File.join( File.dirname(__FILE__), '..' )
+  end
+
+  def teardown
+    Culler::Root.delete_all
   end
 
   def test_initializer_takes_a_name_and_path

@@ -2,9 +2,12 @@ require 'test/helper'
 
 class TestCullerFile < MiniTest::Unit::TestCase
   def setup
-    Culler::File.delete_all
     @path = '/tmp/some_file.bin'
     @root = Culler::Root.new( "tmp", "/tmp" )
+  end
+
+  def teardown
+    Culler::File.delete_all
   end
 
   def test_invalid_without_root
