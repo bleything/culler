@@ -28,4 +28,14 @@ class TestCullerRoot < MiniTest::Unit::TestCase
     assert_equal @name, Culler::Root.first.name
     assert_equal @path, Culler::Root.first.path
   end
+
+  def test_invalid_without_unique_name
+    Culler::Root.new( @name, @path ).save
+    refute Culler::Root.new( @name, 'some other path' ).valid?
+  end
+
+  def test_invalid_without_unique_path
+    Culler::Root.new( @name, @path ).save
+    refute Culler::Root.new( 'some other name', @path ).valid?
+  end
 end
