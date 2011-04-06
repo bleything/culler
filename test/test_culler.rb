@@ -1,7 +1,7 @@
-require "test/unit"
+require "minitest/unit"
 require "culler"
 
-class TestCuller < Test::Unit::TestCase
+class TestCuller < MiniTest::Unit::TestCase
   def test_sanity
     flunk "write tests or I will kneecap you"
   end
