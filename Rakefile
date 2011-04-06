@@ -10,10 +10,11 @@ Hoe.spec 'culler' do
   self.readme_file  = 'README.md'
 
   ### Install mongo
-  self.extra_deps << [ 'mongo',    '1.1.2'  ]
-  self.extra_deps << [ 'bson_ext', '1.1.2'  ]
+  self.extra_deps << [ 'bson_ext', '~> 1.3' ]
+  self.extra_deps << [ 'mongoid',  '~> 2.0' ]
+  self.extra_deps << [ 'progress', '~> 1.1' ]
 
   ### Use minitest for testing
-  self.extra_dev_deps << ['minitest', '>= 1.7.0']
+  self.extra_dev_deps << [ 'minitest', '~> 2.0' ]
   self.testlib = :minitest
 end
