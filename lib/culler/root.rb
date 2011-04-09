@@ -27,4 +27,16 @@ class Culler::Root
       f.save!
     end
   end
+
+  def to_s( level = :normal )
+    if level == :detailed
+      return "%s: %d files -- %s" % [
+        self.name,
+        self.files.count,
+        self.path
+      ]
+    else
+      return self.name
+    end
+  end
 end

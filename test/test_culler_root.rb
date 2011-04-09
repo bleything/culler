@@ -62,4 +62,13 @@ class TestCullerRoot < MiniTest::Unit::TestCase
       assert File.file?( f.path )
     end
   end
+
+  def test_to_s_returns_root_name
+    assert_equal @name, Culler::Root.new( @name, @path ).to_s
+  end
+
+  def test_to_s_can_return_detailed_info
+    expected = "#{@name}: 0 files -- #{@path}"
+    assert_equal expected, Culler::Root.new( @name, @path ).to_s( :detailed )
+  end
 end
