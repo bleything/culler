@@ -11,7 +11,7 @@ Hoe.spec 'culler' do
 
   ### Install mongo
   self.extra_deps << [ 'bson_ext', '~> 1.3' ]
-  self.extra_deps << [ 'mongoid',  '~> 2.0' ]
+  self.extra_deps << [ 'mongoid',  '~> 2.2' ]
   self.extra_deps << [ 'progress', '~> 1.1' ]
 
   ### Use minitest for testing
