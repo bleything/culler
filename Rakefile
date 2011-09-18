@@ -15,6 +15,6 @@ Hoe.spec 'culler' do
   self.extra_deps << [ 'progress', '~> 1.1' ]
 
   ### Use minitest for testing
-  self.extra_dev_deps << [ 'minitest', '~> 2.0' ]
+  self.extra_dev_deps << [ 'minitest', '~> 2.6' ]
   self.testlib = :minitest
 end

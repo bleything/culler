@@ -5,5 +5,5 @@ gem 'mongoid',  '~> 2.2'
 gem 'progress', '~> 1.1'
 
 group :development do
-  gem 'minitest', '~> 2.0'
+  gem 'minitest', '~> 2.6'
 end
