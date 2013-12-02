@@ -1,5 +1,6 @@
-require 'mongoid'
-Mongoid.configure {|c| c.master = Mongo::Connection.new.db('culler') }
+require 'mongo_mapper'
+MongoMapper.connection = Mongo::Connection.new
+MongoMapper.database   = 'culler'
 
 class Culler
   VERSION = '0.0.1'

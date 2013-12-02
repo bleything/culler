@@ -1,12 +1,12 @@
 class Culler::File
-  include Mongoid::Document
+  include MongoMapper::Document
 
   ### Mongoid Configuration
-  store_in :files
-  field :path
+  set_collection_name :files
+  key :path, String
 
   ### associations and validations
-  belongs_to :root, :class_name => "Culler::Root"
+  belongs_to :root, :class_name => 'Culler::Root'
   validates_presence_of   :path
   validates_uniqueness_of :path
   validates_presence_of   :root_id,

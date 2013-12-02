@@ -1,16 +1,16 @@
 require 'find'
 
 class Culler::Root
-  include Mongoid::Document
+  include MongoMapper::Document
 
   ### Mongoid Configuration
-  store_in :roots
-  field :name
-  field :path
-  field :enabled, :type => Boolean, :default => true
+  set_collection_name :roots
+  key :name,    String
+  key :path,    String
+  key :enabled, Boolean, :default => true
 
   ### associations and validations
-  has_many :files, :class_name => "Culler::File"
+  many :files, :class_name => 'Culler::File'
   validates_presence_of   :name, :path
   validates_uniqueness_of :name, :path
 

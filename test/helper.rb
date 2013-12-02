@@ -1,15 +1,12 @@
+# ugh. this sucks, but it's this or literally 2000+ lines of warnings
+# from mongomapper et al
+$VERBOSE = false
+
 require 'minitest/unit'
 require 'culler'
 
-Mongoid.configure do |c|
-  c.master = Mongo::Connection.new.db( 'culler-test' )
-
-  # disable dynamic fields so the tests blow up if we try to access a
-  # field that doesn't exist. This is done only in test/dev because we
-  # don't want to assume how people are going to use their culler data
-  # in actual use.
-  c.allow_dynamic_fields = false
-end
+MongoMapper.connection = Mongo::Connection.new
+MongoMapper.database   = 'culler-test'
 
 ### drop the database so it is recreated cleanly
-Mongoid.config.master.connection.drop_database( 'culler-test' )
+MongoMapper.connection.drop_database( 'culler-test' )
