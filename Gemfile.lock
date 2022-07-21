@@ -23,7 +23,7 @@ GEM
       tzinfo (~> 0.3.22)
     multi_json (1.14.1)
     progress (1.2.1)
-    tzinfo (0.3.56)
+    tzinfo (0.3.61)
 
 PLATFORMS
   ruby
